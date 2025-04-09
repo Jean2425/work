@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Stop servers
+    shell: /opt/apache-tomcat-9.0.102/bin/shutdown.sh
+  handlers:
+  - name: restart httpd
+    shell: ps -ef | grep tomcat
+...
