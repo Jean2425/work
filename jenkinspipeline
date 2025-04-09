@@ -1,1 +1,9 @@
+pipeline 
+{
+agent any 
 
+
+parameters {
+  choice choices: ['STG', 'PROD'], name: 'Choose Env'
+}
+}
