@@ -1,10 +1,18 @@
-pipeline 
-{
-agent any 
-
-parameters {
-  choice choices: ['STG', 'PROD'], name: 'Choose Env'
-}
+pipeline {
+    agent any
+    
+    parameters {
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['STG', 'PRD'],
+            description: 'Select the target environment'
+        )
+        choice(
+            name: 'ACTION',
+            choices: ['START', 'STOP'],
+            description: 'Select the action to perform'
+        )
+    }
 
 
 stages{
