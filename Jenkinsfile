@@ -2,11 +2,10 @@ pipeline
 {
 agent any 
 
-
 parameters {
   choice choices: ['STG', 'PROD'], name: 'Choose Env'
 }
-}
+
 
 stages{
 stage('checkout')
@@ -16,3 +15,4 @@ stage('checkout')
         }
     }
   }
+}
