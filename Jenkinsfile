@@ -14,8 +14,17 @@ pipeline {
         )
     }
 
-
+    
 stages{
+
+    stage('Validate Input') {
+            steps {
+                script {
+                    echo "Selected Environment: ${params.ENVIRONMENT}"
+                    echo "Selected Action: ${params.ACTION}"
+                }
+            }
+        }
 stage('checkout')
     {
       steps{
