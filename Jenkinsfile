@@ -1,5 +1,7 @@
 pipeline {
-    agent Jenkinsansiblenode
+      agent{ 
+  label 'Jenkinsansiblenode'
+}
     
     parameters {
         choice(
