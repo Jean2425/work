@@ -1,9 +1,9 @@
 //mine
 pipeline {
 
-    agent{ 
-  label 'Jenkinsansiblenode'
-}
+    agent any
+    //{  label 'Jenkinsansiblenode'}
+    
     options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '10')
 }
