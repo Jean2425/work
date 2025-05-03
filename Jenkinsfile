@@ -4,6 +4,9 @@ pipeline {
     agent{ 
   label 'Jenkinsansiblenode'
 }
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '10')
+}
     
 environment{
     AWS_EC2_PRIVATE_KEY=credentials('ec2-private-key')
