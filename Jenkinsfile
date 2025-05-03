@@ -45,6 +45,8 @@ stage('Ping')
 
     {
       steps{
+          sh "whoami"
+          sh "hostname"
           sh "ansible-playbook -i inventory/hosts --private-key=$AWS_EC2_PRIVATE_KEY playbooks/01ping.yaml --ssh-common-args='-o StrictHostKeyChecking=no'"
         }
     }
