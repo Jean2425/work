@@ -8,9 +8,9 @@ pipeline {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '10')
 }
     
-environment{
+/*environment{
     AWS_EC2_PRIVATE_KEY=credentials('ec2-private-key')
-}
+}*/
     parameters {
         choice(
             name: 'ENVIRONMENT',
