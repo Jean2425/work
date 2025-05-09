@@ -1,16 +1,15 @@
 //mine
 pipeline {
 
-    agent any
-    //{  label 'Jenkinsansiblenode'}
+    agent {  label 'jenkinsansiblenode'}
     
     options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '10')
 }
     
-/*environment{
+environment{
     AWS_EC2_PRIVATE_KEY=credentials('ec2-private-key')
-}*/
+}
     parameters {
         choice(
             name: 'ENVIRONMENT',
