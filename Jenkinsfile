@@ -56,17 +56,17 @@ stage('Ping')
 
 stage('tomcat_stg_1')
 
+  stage('tomcat_stg_1')
+
     steps{
           script {
-                    if (params.ENVIRONMENT == 'STG') {{ansiblePlaybook( playbook: "${params.ACTION}_02stop.yml")}
+                    if (params.ENVIRONMENT == 'STG') {ansiblePlaybook( playbook: "${params.ACTION}_02stop.yml")}
                         // PRD Environment Operations
                                                 
                         }
                     }
-          }
+          
   
     
   } // stages closing
-} // pipeline closing
-
 } // pipeline closing
