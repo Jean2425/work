@@ -53,7 +53,7 @@ stage('Ping')
         }
     }
 
-/*
+
 stage('checkout')
 
     steps{
@@ -61,18 +61,13 @@ stage('checkout')
                     if (params.ENVIRONMENT == 'STG') {
                         // PRD Environment Operations
                         stage('tomcat_stg_1') {
-                            ansiblePlaybook(
-                                playbook: "${params.ACTION}_tomcat.yml",
-                                inventory: 'inventory_prd',
-                                extraVars: [
-                                    server: 'tomcat_stg_1'
-                                ]
-                            )
+                            ansiblePlaybook( playbook: "${params.ACTION}_02stop.yml")}
+
                             
                         }
                     }
           }
-    }
-    */
+  
+    
   } // stages closing
 } // pipeline closing
